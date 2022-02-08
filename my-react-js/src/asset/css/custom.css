@@ -1,0 +1,9 @@
+.topFixedBanner{
+
+background-image: url("../image/2.jpg");
+min-height: 550px;
+background-attachment: fixed;
+background-position:center ;
+background-repeat: no-repeat;
+background-size: cover;
+}
