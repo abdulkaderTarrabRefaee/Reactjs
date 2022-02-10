@@ -1,64 +1,71 @@
-import '../asset/css/custom.css'; 
+import '../asset/css/custom.css';
 import { Component, Fragment } from 'react';
 import { Button, Col, Container, Row } from 'react-bootstrap';
+import AppUrl from  '../AppUrl/AppUrl'
+import RestApi from  '../AppUrl/RestApi'
+
+
+
 export class TobBanner extends Component {
-    render() {
-         return (
-              <Fragment>
+     constructor()
+     {
+          super();
+          this.state={
+               title:"rr",
+               subtitle:"gg",
+               buttonName:"erew",
+               buttonUrl:""
+          }
+     }
 
-              <Container fluid={true} className="topFixedBanner  p-0 "  >
+     componentDidMount()
+     {
+          RestApi.GetRequest(AppUrl.topBannerHome).then(result=>
+               {
+                    this.setState({
+                    title:result[0]['title'],
+                    subtitle:result[0]['subtitle'],
+                    buttonName:result[0]['buttun_name'],
+                    buttonUrl:result[0]['buttun_url'],
+               
+               })
+               });
+     }
+     render() {
+          return (
+               <Fragment>
 
-              <div className="topBannerOverly">
+                    <Container fluid={true} className="topFixedBanner  p-0 "  >
 
-              <Container className="topContent"  >
+                         <div className="topBannerOverly">
 
-              <Row>
+                              <Container className="topContent"  >
 
-              <Col className="text-center"  >
+                                   <Row>
 
-              <h1  className="topTitle" >  Creative Team Programming  </h1>
-              <h4 className="topSubTitle">  Learn Programing skills </h4>
-              <Button variant="primary">More</Button>
-              
-              
-              </Col>
-              
-              
-              </Row>
-              
-              
-              </Container>
+                                        <Col className="text-center"  >
 
+                                             <h1 className="topTitle" >   {this.state.title} </h1>
+                                             <h4 className="topSubTitle"> {this.state.subtitle} </h4>
+                                             <Button variant="primary">{this.state.buttonName}</Button>
 
-              
-              
-              
-              
-              </div>
-
-
-             
-
-
-
-
-
-
-
-
-              
-              </Container>
+                                        </Col>
 
 
+                                   </Row>
+
+                              </Container>
 
 
+                         </div>
 
 
+                    </Container>
 
 
-              </Fragment>
-         )
-    }
+               </Fragment>
+          )
+     }
 }
 
 export default TobBanner;

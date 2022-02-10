@@ -7,3 +7,22 @@ background-position:center ;
 background-repeat: no-repeat;
 background-size: cover;
 }
+
+.topBannerOverly{
+    position: absolute;
+    min-height: 550px;
+    width: 100%;
+    background-color: rgba(22, 4, 121, 0.178);
+}
+
+.topContent{
+    padding-top: 12em;
+}
+.topTitle{
+    color: aliceblue ;
+}
+
+.topSubTitle{
+    color: rgb(235, 235, 14) ;
+    
+}

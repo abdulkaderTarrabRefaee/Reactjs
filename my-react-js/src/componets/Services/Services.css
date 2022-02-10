@@ -1,0 +1,22 @@
+.imgServices{
+    height: 200px;
+    width: 200px;
+}
+
+.ServiceCard
+{
+    box-shadow: 1px 1px 8px 0 rgb(20, 20, 20);
+ padding: 60px 30px 60px 30px ;
+ height: 24rem;
+ margin: 6px;
+
+
+}
+.ServiceCard:hover
+{
+    box-shadow: 1px 1px 8px 0 rgb(0, 42, 156);
+ padding: 60px 30px 60px 30px ;
+ height: 24rem;
+
+margin: 6px;
+}
